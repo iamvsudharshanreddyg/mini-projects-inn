@@ -1,0 +1,40 @@
+<body>
+    <div class="backdrop"></div>
+    <header class="main-header">
+        <button id="side-menu-toggle">Menu</button>
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <% if(isauth){%>
+                <li class="main-header__item">
+                    <a class="<%= path === '/user/dashboard' ? 'active' : '' %>" href="/user/dashboard">Expensives</a>
+                </li>
+                <li class="main-header__item">
+                    <a class="<%= path === '/user/add-expensive' ? 'active' : '' %>" href="/user/add-expensive">Add
+                        Expensives
+                    </a>
+                </li>
+                <li class="main-header__item">
+                    <a class="<%= path === '/user/expensives' ? 'active' : '' %>" href="/user/expensives">Edit Expensives
+                    </a>
+                </li>
+                <% } %>
+            </ul>
+            <ul class="main-header__item-list">
+                <% if(!isauth){%>
+                    <li class="main-header__item">
+                        <a class="<%= path === '/signin' ? 'active' : '' %>" href="/signin">Login</a>
+                    </li>
+                    <li class="main-header__item">
+                        <a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup">Signup</a>
+                    </li>
+                <% }else{ %>
+                    <li class="main-header__item">
+                        <a class="<%= path === '/user/userdetails' ? 'active' : '' %>" href="/user/userdetails">Profile</a>
+                    </li>
+                    <li class="main-header__item">
+                        <a href="/logout">logout</a>
+                    </li>
+                    <% } %>
+            </ul>
+        </nav>
+    </header>

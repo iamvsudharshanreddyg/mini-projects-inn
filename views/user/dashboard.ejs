@@ -1,0 +1,30 @@
+<%- include('../includes/head.ejs') %>
+</head>
+<%- include('../includes/nav.ejs')%>
+    <main>
+        <% if (prods.length > 0) { %>
+            <div class="grid">
+                <% for (let expensive of prods) { %>
+                    <article class="card product-item">
+                        <header class="card__header">
+                            <h1 class="product__title"><%= expensive.Purpose %></h1>
+                        </header>
+                        <div class="card__content">
+                            <h2 class="product__price"><span>&#8377;</span> <%= expensive.price %></h2>
+                            <p class="product__description"><%= expensive.description %></p>
+                        </div>
+                        <div class="card__actions">
+                                <a href="expensive/<%= expensive._id %>" class="btn">Details</a>
+                                
+                        </div>
+                    </article>
+                <% } %>
+            </div>
+        <% } else { %>
+            <h1>No data Found!</h1>
+        <% } %>
+    </main>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

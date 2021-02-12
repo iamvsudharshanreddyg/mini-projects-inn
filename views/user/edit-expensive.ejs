@@ -1,0 +1,33 @@
+<%- include('../includes/head.ejs') %>
+</head>
+<%- include('../includes/nav.ejs')%>
+    <main>
+        <form class="product-form" action="/user/<% if (editing) { %>edit-expensive<% } else { %>add-expensive<% } %>"
+            method="POST">
+            <div class="form-control">
+                <label for="title">Purpos</label>
+                <input type="text" name="title" id="title" value="<% if (editing) { %><%= expensive.Purpose %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="price">Price</label>
+                <input type="number" name="price" id="price" min="10.00" max="1000000.00" step="0.01"
+                    value="<% if (editing) { %><%= expensive.price %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="description">Description</label>
+                <textarea name="description" id="description"
+                    rows="5"><% if (editing) { %><%= expensive.description %><% } %></textarea>
+            </div>
+            <% if (editing) { %>
+                <input type="hidden" value="<%= expensive._id %>" name="productId">
+                <% } %>
+
+                    <button class="btn" type="submit">
+                        <% if (editing) { %>Update expensive<% } else { %>Add expensive<% } %>
+                    </button>
+        </form>
+    </main>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

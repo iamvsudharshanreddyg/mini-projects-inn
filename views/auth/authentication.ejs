@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        <%= pageTitle %>
+    </title>
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+
+    <div class="container" style="margin-top: 100px;margin-left: 500px; width: 400px; padding: 30px;">
+        <form action="/verify" method="POST" class="w3-container w3-card-4 w3-light-grey" >
+            <h2>verification </h2>
+            <p>Enter the Token send to your mail</p>
+        
+            <input class="w3-input w3-border" name="token" type="text" required></p>
+          
+           <center> <p><button class="w3-btn w3-blue">verify</button></p></center>
+          </form>
+    </div>
+</body>
+
+</html>
